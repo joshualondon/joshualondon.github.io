@@ -1,0 +1,72 @@
+@mixin button($background, $color) {
+
+	background-color: $background;
+	color: $color;
+
+	&:hover,
+	&:focus {
+		background-color: darken($background, 7%);
+		transition: all .3s ease;
+	}
+
+	&:is-active {
+		background-color: darken($background, 7%);
+	}
+}
+
+.button,
+button {
+	border: none;
+    border-radius: .25rem;
+	display: inline-block;
+    font: 200 1em/1.5 $sans-serif;
+	padding: .5em 1em .4125em 1em;
+	position: relative;
+	text-decoration: none; // for anchors
+    transition: .2s;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&.link-style {
+		@include button(transparent, $color-link);
+        padding: .25em .75em;
+
+        &:hover {
+            text-decoration: underline;
+        }
+	}
+
+	&.primary {
+		@include button($cblue, $white);
+	}
+
+
+	&.close {
+		@include button(transparent, $color-link);
+		width: 30px;
+		height: 30px;
+	}
+
+
+    &.small {
+        font-size: .8125rem;
+        padding: .25em .75em;
+    }
+
+    &.with-loader {
+        padding-right: 4em;
+
+        .loader {
+            top: 1.75em;
+            right: -.25em;
+            left: auto;
+
+            &:before,
+            &:after {
+                border-color: $white;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+/*
+    - Include this as an anchor at the top of your page
+        <a href="#content" class="skip-to-content">Skip to main content</a>
+*/
+
+.skip-to-content {
+    background: rgba(0,0,0,.75);
+    border-radius: 2em;
+    color: $white;
+    display: inline-block;
+    padding: .5em 1.25em .5em 3.25em;
+    position: absolute;
+    top: .5em;
+    left: .25em;
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 999;
+
+    &:before {
+        background: url('../images/icons/skip-content-key.svg') no-repeat;
+        border-right: 1px solid #000;
+        content: '';
+        display: block;
+        height: 1.75em;
+        width: 1.75em;
+        position: absolute;
+        left: 1em;
+        top: .5em;
+    }
+
+    &:focus {
+        opacity: 1;
+        outline: none; // enough of a visual cue so not necessary?
+        transform: translateX(0);
+        transition: .25s;
+    }
+}

@@ -1,0 +1,37 @@
+$terminal-border: #8fd1ff;
+
+pre.terminal,
+pre.highlight {
+	background: #fff;
+	border: 1px solid $terminal-border;
+	border-radius: .25em;
+	padding: 3.5em 1.5em 1em;
+	position: relative;
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+	}
+
+	&:before {
+		border-bottom: 1px solid $terminal-border;
+		height: 27px;
+		top: 0; right: 0; bottom: 0; left: 0;
+	}
+
+	&:after {
+		background-color: $terminal-border;
+		border-radius: 50%;
+		box-shadow: 20px 0 $terminal-border, 40px 0 $terminal-border;
+    	width: 4px;
+    	height: 4px;
+	    left: 15px;
+	    top: 12px;
+	}
+
+	> code {
+		font-size: 14px;
+	}
+}

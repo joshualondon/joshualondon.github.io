@@ -1,0 +1,128 @@
+label {
+	display: block;
+	font-weight: $fw-bold;
+	margin-bottom: .8175em;
+}
+
+input,
+select,
+textarea {
+	background: $white;
+	border: 0;
+	border-radius: .125em;
+	color: $black;
+
+	display: inline-block;
+	margin: 0;
+	padding: .75em 1em .7125em;
+	vertical-align: middle;
+	white-space: normal;
+
+	// redeclare
+	font: 1em/1.5 sans-serif;
+	line-height: 1.5;
+
+	// webkit
+	-webkit-appearance: none;
+}
+
+input:focus {
+	outline: 0;
+}
+
+input,
+textarea {
+	box-sizing: border-box;
+}
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+	box-sizing: border-box;
+}
+
+/* Text Inputs
+-----------------------------------------------*/
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+	border: 1px solid darken($light-grey, 9%);
+	width: 100%;
+
+	&:focus {
+		border-color: rgba(0,171,211, 1); // $cblue
+		//box-shadow: 0 0 8px rgba(0,171,211, .25);
+		transition: .25s;
+	}
+}
+
+input[type=checkbox],
+input[type=radio] {
+    border: 1px solid $light-grey;
+	width: 14px;
+	height: 14px;
+}
+
+input[type=checkbox] {
+    -webkit-appearance: checkbox;
+}
+
+input[type=radio] {
+    -webkit-appearance: radio;
+}
+
+select {
+	background-image: url('../images/icons/caret-down.svg');
+    background-position: right center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+	background-size: 14px;
+	border: 1px solid $light-grey;
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: normal;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    height: 3.0625rem;
+}
+
+/* Search Input
+-----------------------------------------------*/
+
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+	-webkit-appearance: none;
+	-webkit-box-sizing: border-box;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+	line-height: 1.5;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}

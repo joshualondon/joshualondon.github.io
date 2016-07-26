@@ -1,0 +1,32 @@
+.post {
+	@include container();
+	margin-bottom: 3em;
+
+	header {
+		text-align: center;
+	}
+
+	.intro {
+		font-size: 135%;
+		font-weight: 200;
+	}
+}
+
+.post-content {
+
+	img {
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	p, ul, ol {
+		max-width: $readable-max-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	h2, h3, h4, h5, h6 {
+		text-align: center;
+	}
+}

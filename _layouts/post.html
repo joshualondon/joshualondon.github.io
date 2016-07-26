@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+	<header>
+
+		{% assign abbreviation = site.data.post_abbrs[page.category] %}
+
+		<abbr class="post-icon post--{{ page.category }} hint--top" data-hint="{{ page.category }}" title="{{ page.category }}">{{ abbreviation }}</abbr>
+		<h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+
+		{% if page.intro %}
+		<p class="intro">{{ page.intro }}</p>
+		{% endif %}
+		<p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+	</header>
+
+	<div class="post-content" itemprop="articleBody">
+		{{ content }}
+	</div>
+
+</article>
+
+<div class="prev-next-container">
+	<ul>
+		<li>
+			{% if page.previous %}
+				<a href="{{ page.previous.url }}">
+					<div class="eyebrow">Previous</div>
+					<h2>{{ page.previous.title }}</h2>
+					<p>{{ page.previous.intro | truncate: 90 }}</p>
+					<div class="ion ion-ios-arrow-thin-left"></div>
+				</a>
+			{% endif %}
+		</li>
+		<li>
+			{% if page.next %}
+				<a href="{{ page.next.url }}">
+					<div class="eyebrow">Up next</div>
+					<h2>{{ page.next.title }}</h2>
+					<p>{{ page.next.intro | truncate: 90 }}</p>
+					<div class="ion ion-ios-arrow-thin-right"></div>
+				</a>
+			{% endif %}
+		</li>
+	</ul>
+</div>
+
+<div class="post-list on--post-screen">
+	<div class="post-list-title">Older posts</div>
+	<ul>
+		{% for post in site.posts %}
+			<li>
+				<div>
+					<h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+					<span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
+				</div>
+				<div>
+					<span class="entry-categories"><a href="{{ site.url }}/{{ page.category-url }}/" rel="category">{{ post.category }}</a></span>
+				</div>
+
+			</li>
+		{% endfor %}
+	</ul>
+</div>

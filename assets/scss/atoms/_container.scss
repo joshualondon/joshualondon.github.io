@@ -1,0 +1,17 @@
+.container {
+    padding: 0 $line-height-ratio+em;
+    @include outer-container();
+
+    @media #{$largest} {
+        padding: 0;
+    }
+}
+
+@mixin container {
+    padding: 0 $line-height-ratio+em;
+    @include outer-container();
+
+    @media #{$largest} {
+        padding: 0;
+    }
+}

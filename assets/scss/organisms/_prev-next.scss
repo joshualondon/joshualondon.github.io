@@ -1,0 +1,51 @@
+.prev-next-container {
+    background: linear-gradient(to right, #16222A , #3A6073);
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        @include outer-container();
+
+        li {
+            @media #{$small} {
+                @include span-columns(5);
+
+                &:first-child {
+
+                }
+
+                &:last-child {
+                    @include shift(2);
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    a {
+        color: $white;
+        display: block;
+        padding: $line-height-ratio+em;
+        text-decoration: none;
+
+        @media #{$medium} {
+            padding: $line-height-ratio+em 0;
+        }
+
+        h2 {
+            color: $white;
+            font: 100 1.5em/1.5 $sans-serif;
+        }
+
+        p {
+            font-weight: 100;
+            margin-bottom: 0;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+    }
+}
