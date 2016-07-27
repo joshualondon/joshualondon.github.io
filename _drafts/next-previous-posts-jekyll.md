@@ -6,11 +6,9 @@ intro:
 tags:
 ---
 
-You should always consider offering additional content to your users. You just might keep that user on your site!
+[You should always consider offering additional content to your users.](http://twitter.com/intent/tweet?text=You%20should%20always%20consider%20offering%20via%20@joshualondon) You just might keep that user on your site!
 
 There's a fairly simple way to do this with [Jekyll Variables](http://jekyllrb.com/docs/variables/).
-
-## The markup
 
 ```html
 <div class="prev-next-container">
@@ -26,14 +24,14 @@ There's a fairly simple way to do this with [Jekyll Variables](http://jekyllrb.c
       {{ "{% endif "  }}%}
     </li>
     <li>
-      {% if page.next %}
+      {{ "{% if page.next " }}%}
         <a href="{{ page.next.url }}">
           <div class="eyebrow">Up next</div>
           <h2>{{ page.next.title }}</h2>
           <p>{{ page.next.intro | truncate: 90 }}</p>
           <div class="ion ion-ios-arrow-thin-right"></div>
         </a>
-      {% endif %}
+      {{ "{% endif "  }}%}
     </li>
   </ul>
 </div>
