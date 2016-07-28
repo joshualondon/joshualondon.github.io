@@ -2,33 +2,31 @@
 layout: default
 ---
 
-<div class="home">
+<main class="home container">
+	<h1 class="page-heading">Posts</h1>
 
-  <h1 class="page-heading">Posts</h1>
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
+    </ul>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  	<h2>Terminal Window for code</h2>
 
-	<h2>Terminal Window for code</h2>
+    <pre class="terminal large"><code class="hljs nginx"><span class="hljs-title">touch</span> index.php
+  </code></pre>
 
-  <pre class="terminal large"><code class="hljs nginx"><span class="hljs-title">touch</span> index.php
-</code></pre>
+  	<abbr class="post-icon post-development hint--right" data-hint="Development" title="Development">Dev</abbr>
 
-	<abbr class="post-icon post-development hint--right" data-hint="Development" title="Development">Dev</abbr>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 
-  {% include molecules/_plays-well.html %}
 
-</div>
+    {% include molecules/_plays-well.html %}
+</main>

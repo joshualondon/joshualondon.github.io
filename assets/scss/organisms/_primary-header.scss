@@ -1,0 +1,56 @@
+.primary-header {
+	background: #333e4b;
+	margin-bottom: 4rem;
+	position: relative;
+	z-index: 1;
+
+	&:after {
+		background: inherit;
+		bottom: 0;
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		right: 0;
+		transform: skewY(-1.5deg);
+		transform-origin: 100%;
+		z-index: -1;
+	}
+
+	.take-me-home {
+		color: $white;
+		display: block;
+		text-decoration: none;
+
+		span {
+			display: block;
+
+			&:first-child {
+				font-size: 1.25em;
+			}
+
+			&:last-child {
+				font-size: .85em;
+				font-style: italic;
+			}
+		}
+
+		@media #{$medium} {
+			@include span-columns(3 of 12);
+		}
+	}
+
+	.primary-nav {
+
+		@media #{$medium} {
+			@include span-columns(5 of 12);
+			@include shift(4);
+		}
+
+		a {
+			display: inline-block;
+		}
+	}
+
+}

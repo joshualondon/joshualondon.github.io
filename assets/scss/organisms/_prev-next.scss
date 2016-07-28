@@ -29,19 +29,44 @@
         padding: $line-height-ratio+em;
         text-decoration: none;
 
+
+
         @media #{$medium} {
             padding: $line-height-ratio+em 0;
         }
 
         h2 {
             color: $white;
+			display: inline-block;
             font: 100 1.5em/1.5 $sans-serif;
+			position: relative;
+
+			&:after {
+				background: rgba(204, 255, 0, .5);
+				content: '';
+				display: block;
+				height: 6px;
+				width: 0;
+				position: absolute;
+				top: 1em;
+				transition: 200ms;
+			}
         }
+
+		&:hover h2:after {
+			width: 100%;
+		}
 
         p {
             font-weight: 100;
             margin-bottom: 0;
+			transform: translate3d(0);
+			transition: 300ms;
         }
+
+		&:hover p {
+			transform: translateY(-3px);
+		}
 
         .eyebrow {
             font-size: 11px;
